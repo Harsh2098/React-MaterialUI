@@ -22,7 +22,7 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <MaterialAppBar title="Enter User Details" />
+          <MaterialAppBar title="Enter Personal Details" />
 
           <TextField
             hintText="Enter your city"

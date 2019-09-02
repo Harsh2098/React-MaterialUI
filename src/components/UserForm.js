@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
+import ConfirmSubmission from "./ConfirmSubmission";
+import CenteredTabs from "./Tabs";
 
 export class UserForm extends Component {
   state = {
@@ -41,13 +43,7 @@ export class UserForm extends Component {
 
     switch (step) {
       case 1:
-        return (
-          <FormUserDetails
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
+        return <CenteredTabs />;
 
       case 2:
         return (
@@ -60,7 +56,13 @@ export class UserForm extends Component {
         );
 
       case 3:
-        return <h2> Confirm submission</h2>;
+        return (
+          <ConfirmSubmission
+            nextStep={this.nextStep}
+            previousStep={this.previousStep}
+            values={values}
+          />
+        );
 
       case 4:
         return <h2>Success</h2>;
